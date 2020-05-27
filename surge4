@@ -1,0 +1,216 @@
+General]
+loglevel = warning
+skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 127.0.0.1, localhost, *.local,*.crashlytics.com
+ipv6 = false
+allow-wifi-access = false
+proxy-test-url = http://www.gstatic.com/generate_204
+internet-test-url = http://www.gstatic.com/generate_204
+wifi-access-http-port = 2222
+wifi-access-socks5-port = 2223
+network-framework = false
+dns-server = 114.114.114.114, 114.114.115.115, 8.8.8.8, 1.1.1.1
+doh-format = wireformat
+test-timeout = 3
+
+[Replica]
+hide-apple-request = 1
+hide-crashlytics-request = 1
+hide-udp = 1
+use-keyword-filter = false
+keyword-filter = v21.tiktokcdn.com
+keyword-filter-type = (null)
+
+[Proxy]
+🇭🇰 = ss, 119.39.28.7, 43166, encrypt-method=chacha20-ietf, password=54808f6c247d8
+🇭🇰2 = ss, 119.39.28.3, 18165, encrypt-method=chacha20-ietf, password=54808f6c247d8
+🇭🇰 3 = ss, 103.56.60.75, 43166, encrypt-method=chacha20-ietf, password=54808f6c247d8
+
+[Proxy Group]
+Proxy = select, 🥀, 🇭🇰, 🇭🇰2, 🇭🇰 3
+🥀 = url-test, 🇭🇰, 🇭🇰2, 🇭🇰 3, url=http://www.gstatic.com/generate_204, timeout=0, interval=0, tolerance=0
+
+[Rule]
+DOMAIN,apps.mzstatic.com,Proxy // Added for webpage: apps.mzstatic.com:443
+DOMAIN,ocsp.digicert.com,REJECT
+DOMAIN,ocsp.apple.com,REJECT
+DOMAIN,api2-16-h2.musical.ly,Proxy
+DOMAIN,api-h2.tiktokv.com,Proxy
+RULE-SET,https://github.com/ConnersHua/Profiles/raw/master/Surge/Ruleset/China.list,DIRECT
+RULE-SET,https://github.com/ConnersHua/Profiles/raw/master/Surge/Ruleset/Global.list,Proxy
+DOMAIN,is.snssdk.com,REJECT // Added for webpage: https://is.snssdk.com/api/ad/union/sdk/stats/
+DOMAIN,sf1-ttcdn-tos.pstatp.com,REJECT // Added for webpage: http://sf1-ttcdn-tos.pstatp.com/img/web.business.image/201907125d0d8d8b96b334d341fbb6f2~cs_q75.jpeg
+DOMAIN-SUFFIX,iconfactory.com,REJECT // Added for webpage: https://iconfactory.com/columba/images/SQLPro_140.png
+DOMAIN,r4---sn-*.googlevideo.com,REJECT
+DOMAIN,rpc.tapjoy.com,REJECT
+DOMAIN,play.googleapis.com,REJECT
+DOMAIN-SUFFIX,rayjump.com,REJECT // 拥挤城市
+DOMAIN-SUFFIX,applovin.com,REJECT // 拥挤城市
+DOMAIN-SUFFIX,ssacdn.com,REJECT // 拥挤城市
+DOMAIN-SUFFIX,cloudfront.net,REJECT // 拥挤城市
+DOMAIN-SUFFIX,downsx.com,DIRECT // 1024下载
+USER-AGENT,AppleCoreMedia*,Proxy
+USER-AGENT,VEGA%20Conflict*,Proxy // VEGA
+USER-AGENT,Pinterest*,Proxy // Ponterest
+USER-AGENT,pixiv*,Proxy // pixiv
+DOMAIN,translate.google.cn,DIRECT // 翻译
+DOMAIN,adserver.juicyads.com,REJECT // Added for webpage: adserver.juicyads.com:443
+DOMAIN-KEYWORD,securepubads,REJECT
+DOMAIN-SUFFIX,getpricetag.com,DIRECT
+DOMAIN-SUFFIX,microsofttranslator.com,DIRECT // 翻译
+DOMAIN-SUFFIX,moatads.com,Proxy
+DOMAIN-SUFFIX,soundcloud.com,Proxy
+DOMAIN,dq.tieba.com,DIRECT
+DOMAIN-SUFFIX,v.smtcdns.net,DIRECT // 企鹅直播
+DOMAIN-SUFFIX,myqcloud.com,DIRECT
+DOMAIN-SUFFIX,qpyou.cn,Proxy
+DOMAIN-SUFFIX,80s.tw,DIRECT
+DOMAIN-SUFFIX,github.com,Proxy
+DOMAIN-SUFFIX,app-measurement.com,Proxy
+DOMAIN,api.mixpanel.com,DIRECT // Added for webpage: api.mixpanel.com:443
+DOMAIN,www.zhihu.com,DIRECT // 知乎
+DOMAIN,music.163.com,DIRECT // 网易云音乐
+DOMAIN,down.tutuapp.net,DIRECT // 兔兔助手
+DOMAIN-SUFFIX,tumblr.com,Proxy
+USER-AGENT,SoundCloud*,Proxy
+# Google广告
+DOMAIN-SUFFIX,pagead-tpc.l.google.com,REJECT
+DOMAIN-SUFFIX,pagead.l.google.com,DIRECT
+DOMAIN-SUFFIX,pagead.google.com,REJECT
+DOMAIN-SUFFIX,mobileads.google.com,REJECT
+DOMAIN-SUFFIX,google-analytics.com,REJECT
+DOMAIN-SUFFIX,googleadsserving.cn,REJECT
+DOMAIN-SUFFIX,googleadservices.com,REJECT
+DOMAIN-SUFFIX,badad.googleplex.com,REJECT
+DOMAIN-SUFFIX,afd.l.google.com,REJECT
+DOMAIN-SUFFIX,ads.google.com,REJECT
+DOMAIN-KEYWORD,adservice,REJECT
+DOMAIN-KEYWORD,googleads,REJECT
+DOMAIN-SUFFIX,googlesyndication.com,REJECT
+# Apple
+USER-AGENT,*com.apple.mobileme.fmip1,DIRECT
+USER-AGENT,*WeatherFoundation*,DIRECT
+USER-AGENT,%E5%9C%B0%E5%9B%BE*,DIRECT // Maps
+USER-AGENT,%E8%AE%BE%E7%BD%AE*,DIRECT // Settings
+USER-AGENT,com.apple.geod*,DIRECT
+USER-AGENT,com.apple.Maps,DIRECT
+USER-AGENT,FindMyFriends*,DIRECT
+USER-AGENT,FindMyiPhone*,DIRECT
+USER-AGENT,FMDClient*,DIRECT
+USER-AGENT,FMFD*,DIRECT
+USER-AGENT,fmflocatord*,DIRECT
+USER-AGENT,geod*,DIRECT
+USER-AGENT,locationd*,DIRECT
+USER-AGENT,Maps*,DIRECT
+DOMAIN,api.smoot.apple.com,DIRECT
+DOMAIN,captive.apple.com,DIRECT
+DOMAIN,configuration.apple.com,DIRECT
+DOMAIN,guzzoni.apple.com,DIRECT
+DOMAIN,smp-device-content.apple.com,DIRECT
+DOMAIN,xp.apple.com,DIRECT
+DOMAIN-SUFFIX,ess.apple.com,DIRECT
+DOMAIN-SUFFIX,push-apple.com.akadns.net,DIRECT
+DOMAIN-SUFFIX,push.apple.com,DIRECT
+DOMAIN,api.smoot.apple.cn,DIRECT
+DOMAIN,gs-loc.apple.com,DIRECT // Maps
+DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+DOMAIN-SUFFIX,lcdn-locator.apple.com,DIRECT // Maps
+DOMAIN-SUFFIX,lcdn-registration.apple.com,DIRECT // Maps
+DOMAIN-SUFFIX,ls.apple.com,DIRECT // Maps
+DOMAIN-SUFFIX,mzstatic.com,DIRECT // App Store & iTunes Images
+DOMAIN-SUFFIX,aaplimg.com,Proxy
+DOMAIN-SUFFIX,apple.co,Proxy
+DOMAIN-SUFFIX,icloud-content.com,Proxy
+DOMAIN-SUFFIX,icloud.com,Proxy
+DOMAIN-SUFFIX,itunes.com,Proxy
+DOMAIN-SUFFIX,itunes.apple.com,Proxy
+DOMAIN-SUFFIX,apple.com,Proxy
+DOMAIN-SUFFIX,me.com,Proxy
+USER-AGENT,com.apple.appstored*,DIRECT
+# China Apps
+USER-AGENT,MicroMessenger Client,DIRECT
+USER-AGENT,MobileAsset*,DIRECT
+USER-AGENT,WeChat*,DIRECT
+USER-AGENT,MApi*,DIRECT // Dianping
+# China
+DOMAIN-KEYWORD,alipay,DIRECT
+DOMAIN-KEYWORD,taobao,DIRECT
+DOMAIN-KEYWORD,alicdn,DIRECT
+DOMAIN-SUFFIX,cn,DIRECT
+DOMAIN-KEYWORD,baidu,DIRECT
+# Misc
+DOMAIN,ip.bjango.com,DIRECT // iStat Menu IP Test
+# Battle.net
+DOMAIN-SUFFIX,blizzard.com,DIRECT
+DOMAIN-SUFFIX,battle.net,DIRECT
+# Taiwan
+DOMAIN-SUFFIX,tw,Proxy
+# Against DNS pollution
+DOMAIN-KEYWORD,google,Proxy
+DOMAIN-SUFFIX,gstatic.com,Proxy
+DOMAIN-KEYWORD,gmail,Proxy
+DOMAIN-KEYWORD,youtube,Proxy
+DOMAIN-KEYWORD,facebook,Proxy
+DOMAIN-SUFFIX,fb.me,Proxy
+DOMAIN-SUFFIX,fbcdn.net,Proxy
+DOMAIN-KEYWORD,twitter,Proxy
+DOMAIN-KEYWORD,instagram,Proxy
+DOMAIN-KEYWORD,dropbox,Proxy
+DOMAIN-SUFFIX,twimg.com,Proxy
+DOMAIN-KEYWORD,blogspot,Proxy
+DOMAIN-SUFFIX,youtu.be,Proxy
+DOMAIN-SUFFIX,oculuscdn.com,Proxy
+DOMAIN-SUFFIX,oculus.com,Proxy
+DOMAIN-KEYWORD,whatsapp,Proxy
+# Telegram
+IP-CIDR,91.108.56.0/22,Proxy,no-resolve
+IP-CIDR,91.108.4.0/22,Proxy,no-resolve
+IP-CIDR,91.108.8.0/22,Proxy,no-resolve
+IP-CIDR,109.239.140.0/24,Proxy,no-resolve
+IP-CIDR,149.154.160.0/20,Proxy,no-resolve
+IP-CIDR,149.154.164.0/22,Proxy,no-resolve
+# LAN
+DOMAIN-SUFFIX,local,DIRECT
+IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+# GeoIP CN
+GEOIP,CN,DIRECT
+FINAL,Proxy,dns-failed
+
+[Host]
+*.soundcloud.com = server:1.1.1.1
+*.sndcdn.com = 1.1.1.1
+*.app-measurement.com = server:1.1.1.1
+m.egame.qq.com = 183.3.234.193
+
+[URL Rewrite]
+(.*video_id=\w{32})(.*watermark=)(.*) $1 302
+(?<=(carrier|account|sys)_region=)CN TW 307
+^http://www\.google\.cn http://www.google.com 302
+https?://.+.googlevideo.com/.+&oad - reject
+https?://.+.googlevideo.com/.+ctier - reject
+https?://.+.googlevideo.com/ptracking\?pltype=adhost - reject
+https?://.+.youtube.com/api/stats/.+adformat - reject
+https?://.+.youtube.com/api/stats/ads - reject
+https?://.+.youtube.com/get_midroll_ - reject
+https?://.+.youtube.com/pagead/ - reject
+https?://.+.youtube.com/ptracking\? - reject
+https?://m.youtube.com/_get_ads - reject
+https?://pagead2.googlesyndication.com/pagead/ - reject
+https?://premiumyva.appspot.com/vmclickstoadvertisersite - reject
+https?://s.youtube.com/api/stats/watchtime?adformat - reject
+https?://s0.2mdn.net/ads/ - reject
+https?://stats.tubemogul.com/stats/ - reject
+https?://youtubei.googleapis.com/.+ad_break - reject
+https?://youtubei.googleapis.com/youtubei/.+(ad|log)_ - reject
+ttps?://.+.youtube.com/api/stats/ads - reject
+https?://api.catch.gift/api/v3/pagead/ - reject
+
+[MITM]
+skip-server-cert-verify = true
+tcp-connection = true
+hostname = *.example.com, *.sample.com，*.googlevideo.com, s.youtube.com, www.youtube.com, youtubei.googleapis.com, api*.tiktokv.com, api*.musical.ly, api*.amemv.com, aweme*.snssdk.com
+ca-passphrase = ol
+ca-p12 = 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
