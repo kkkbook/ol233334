@@ -1,14 +1,14 @@
 payload:  
   - DOMAIN,pay.veritrans-link.com
   - DOMAIN-SUFFIX,docker.com
-  - IP-CIDR,23.89.32.76/8,no-resolve
-  - IP-CIDR,107.172.104.198/8,no-resolve
+  - 23.89.32.76/8,no-resolve
+  - 107.172.104.198/8,no-resolve
   - DOMAIN-SUFFIX,teamviewer.com
   - DOMAIN-SUFFIX,battle.net
   - DOMAIN,blog.daliansky.net
   - DOMAIN-KEYWORD,microsoft
   - DOMAIN,imyrsoooacnz15-my.sharepoint.com
   - DOMAIN-SUFFIX,edgedatg.com
-  - IP-CIDR,2001:b28:f23d::/48,Proxy,no-resolve
-  - IP-CIDR,2001:b28:f23f::/48,Proxy,no-resolve
-  - IP-CIDR,2001:67c:4e8::/48,Proxy,no-resolve
+  - 2001:b28:f23d::/48,Proxy,no-resolve
+  - 2001:b28:f23f::/48,Proxy,no-resolve
+  - 2001:67c:4e8::/48,Proxy,no-resolve
