@@ -1,5 +1,5 @@
 payload:
-  - 47.75.53.149/8
+  - IP-CIDR,47.75.53.149/8
   - DOMAIN,tbm-auth.alicdn.com
   - DOMAIN,h5data.talkingdata.net
   - DOMAIN,eagle-1253434826.file.myqcloud.com
