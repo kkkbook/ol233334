@@ -9,7 +9,7 @@ payload:
   - DOMAIN,pc.zmzapi.com
   - DOMAIN-SUFFIX,lanzous.com
   - DOMAIN,got002.com
- # - DOMAIN-SUFFIX,lolgezi.co
+  - DOMAIN-SUFFIX,lolgezi.com
   - DOMAIN,vip.d0.baidupan.com
   - DOMAIN,api.lolesports.com
   - DOMAIN,cn.ekg.riotgames.com
