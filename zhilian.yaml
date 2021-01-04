@@ -5,7 +5,7 @@ payload:
   - DOMAIN,api.allpayx.com
   - DOMAIN-SUFFIX,baidupan.com
   - DOMAIN,blog.csdn.net
-  - IP-CIDR,182.254.116.0/24,no-resolve
+  - 182.254.116.0/24,no-resolve
   - DOMAIN,pc.zmzapi.com
   - DOMAIN-SUFFIX,lanzous.com
   - DOMAIN,got002.com
@@ -17,10 +17,10 @@ payload:
   - DOMAIN,cowtransfer.com
   - DOMAIN,got001.com
   - DOMAIN,www.rrys2019.com
-  - IP-CIDR,192.168.0.0/16,no-resolve
-  - IP-CIDR,10.0.0.0/8,no-resolve
-  - IP-CIDR,172.16.0.0/12,no-resolve
-  - IP-CIDR,127.0.0.0/8,no-resolve
-  - IP-CIDR,100.64.0.0/10,no-resolve
-  - IP-CIDR,224.0.0.0/4,no-resolve
-
+  - 192.168.0.0/16,no-resolve
+  - 10.0.0.0/8,no-resolve
+  - 172.16.0.0/12,no-resolve
+  - 127.0.0.0/8,no-resolve
+  - 100.64.0.0/10,no-resolve
+  - 224.0.0.0/4,no-resolve
+  - DOMAIN-SUFFIX,cn
