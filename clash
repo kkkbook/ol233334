@@ -1,0 +1,296 @@
+dns:
+  enable: true
+  enhanced-mode: redir-host
+  listen: 127.0.0.1:53
+  default-nameserver:
+    - 114.114.114.114
+    - 8.8.8.8
+  use-hosts: true
+  nameserver:
+    - tls://13800000000.rubyfish.cn:853
+    - tls://8.8.8.8:853
+    - https://i.233py.com/dns-query
+proxies:
+  - name: 🇭🇰
+    type: vmess
+    server: 07.HKG.ASIA.BIGAIRPORT.NET
+    port: "80"
+    uuid: abe29097-1bc6-4778-ae95-ad3a20edabd4
+    alterId: "1"
+    cipher: chacha20-poly1305
+    network: ws
+    ws-path: ""
+  - name: 🇭🇰 aga2
+    type: vmess
+    server: 08.HKG.ASIA.BIGAIRPORT.NET
+    port: "80"
+    uuid: abe29097-1bc6-4778-ae95-ad3a20edabd4
+    alterId: "1"
+    cipher: chacha20-poly1305
+    network: ws
+    ws-path: ""
+  - name: 🇭🇰 aga3
+    type: vmess
+    server: 09.HKG.ASIA.BIGAIRPORT.NET
+    port: "80"
+    uuid: abe29097-1bc6-4778-ae95-ad3a20edabd4
+    alterId: "1"
+    cipher: chacha20-poly1305
+    network: ws
+    ws-path: ""
+  - name: 🇯🇵 徐州联通-日本AWS隧道2组
+    type: vmess
+    server: 24.HKG.ASIA.BIGAIRPORT.NET
+    port: "80"
+    uuid: abe29097-1bc6-4778-ae95-ad3a20edabd4
+    alterId: "1"
+    cipher: chacha20-poly1305
+    network: ws
+    ws-path: ""
+    _index: 3
+  - name: ssr
+    type: ssr
+    server: vhk30.q88q.ml
+    port: 15163
+    cipher: aes-256-cfb
+    password: epChJS35fV
+    obfs: tls1.2_ticket_auth
+    protocol: auth_aes128_sha1
+    obfs-param: 6626d623.baidu.com
+    protocol-param: 623:r5toahm6aan
+    udp: true
+  - name: us
+    type: ss
+    server: 103.114.163.13
+    port: "9014"
+    cipher: aes-256-cfb
+    password: KnJGad3FqTvjqbaX
+proxy-groups:
+  - name: ✾
+    type: url-test
+    proxies:
+      - 🇭🇰
+      - 🇭🇰 aga2
+      - 🇭🇰 aga3
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    _index: 0
+  - name: ℓ
+    proxies:
+      - 🇭🇰
+      - 🇭🇰 aga2
+      - 🇭🇰 aga3
+    type: load-balance
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    _index: 1
+  - name: ❀
+    proxies:
+      - ✾
+    type: select
+    _index: 2
+  - name: Proxy
+    type: select
+    proxies:
+      - ✾
+      - ℓ
+      - 🇭🇰
+      - 🇭🇰 aga2
+      - 🇭🇰 aga3
+      - 🇯🇵 徐州联通-日本AWS隧道2组
+      - ssr
+      - us
+    _index: 3
+rules:
+  - DOMAIN,115.amqigi.workers.dev,Proxy
+  - DOMAIN,114514.wtf,Proxy
+  - RULE-SET,Steam,Proxy
+  - DOMAIN,wjx.cowtransfer.com,DIRECT
+  - DOMAIN-SUFFIX,rubyfish.cn,DIRECT
+  - DOMAIN,www.jianshu.com,DIRECT
+  - DOMAIN,api.allpayx.com,DIRECT
+  - DOMAIN,pay.veritrans-link.com,Proxy
+  - DOMAIN-SUFFIX,baidupan.com,DIRECT
+  - DOMAIN-SUFFIX,docker.com,Proxy
+  - DOMAIN,blog.csdn.net,DIRECT
+  - IP-CIDR,47.75.53.149/8,REJECT
+  - IP-CIDR,23.89.32.76/8,Proxy
+  - IP-CIDR,107.172.104.198/8,Proxy
+  - DOMAIN-SUFFIX,teamviewer.com,Proxy
+  - DOMAIN-SUFFIX,battle.net,Proxy
+  - DOMAIN,tbm-auth.alicdn.com,REJECT
+  - IP-CIDR,182.254.116.0/24,DIRECT
+  - DOMAIN,blog.daliansky.net,Proxy
+  - DOMAIN,pc.zmzapi.com,DIRECT
+  - DOMAIN-SUFFIX,lanzous.com,DIRECT
+  - DOMAIN,got002.com,DIRECT
+  - DOMAIN-KEYWORD,microsoft,Proxy
+  - DOMAIN-SUFFIX,lolgezi.com,DIRECT
+  - DOMAIN,vip.d0.baidupan.com,DIRECT
+  - DOMAIN,imyrsoooacnz15-my.sharepoint.com,Proxy
+  - DOMAIN,api.lolesports.com,DIRECT
+  - DOMAIN,cn.ekg.riotgames.com,DIRECT
+  - DOMAIN,c-t.work,DIRECT
+  - DOMAIN,cowtransfer.com,DIRECT
+  - DOMAIN,got001.com,DIRECT
+  - DOMAIN,www.rrys2019.com,DIRECT
+  - DOMAIN,h5data.talkingdata.net,REJECT
+  - DOMAIN,eagle-1253434826.file.myqcloud.com,REJECT
+  - DOMAIN-SUFFIX,edgedatg.com,Proxy
+  - DOMAIN-SUFFIX,t.me,❀
+  - DOMAIN-SUFFIX,tdesktop.com,❀
+  - DOMAIN-SUFFIX,telegra.ph,❀
+  - DOMAIN-SUFFIX,telegram.me,❀
+  - DOMAIN-SUFFIX,telegram.org,❀
+  - DOMAIN-SUFFIX,telesco.pe,❀
+  - IP-CIDR,91.108.4.0/22,❀,no-resolve
+  - IP-CIDR,91.108.8.0/22,❀,no-resolve
+  - IP-CIDR,91.108.12.0/22,❀,no-resolve
+  - IP-CIDR,91.108.16.0/22,❀,no-resolve
+  - IP-CIDR,91.108.56.0/22,❀,no-resolve
+  - IP-CIDR,149.154.160.0/20,❀,no-resolve
+  - RULE-SET,OneDrive,Proxy
+  - RULE-SET,Unbreak,DIRECT
+  - RULE-SET,Streaming,Proxy
+  - RULE-SET,Global,Proxy
+  - RULE-SET,China,DIRECT
+  - IP-CIDR,2001:b28:f23d::/48,Proxy,no-resolve
+  - IP-CIDR,2001:b28:f23f::/48,Proxy,no-resolve
+  - IP-CIDR,2001:67c:4e8::/48,Proxy,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
+  - GEOIP,CN,DIRECT
+  - MATCH,Proxy
+script:
+  code: >
+    def main(ctx, metadata):
+        port_list = [21, 22, 23, 53, 80, 123, 143, 194, 443, 465, 587, 853, 993, 995, 998, 2052, 2053, 2082, 2083, 2086, 2095, 2096, 5222, 5228, 5229, 5230, 8080, 8443, 8880, 8888, 8889]
+        ruleset_action = {"OneDrive": "Proxy",
+            "telegramsg": "❀",
+            "Bilibili": "DIRECT",
+            "daili": "Proxy",
+            "lianjie": "REJECT",
+            "zhilian": "DIRECT",
+            "Unbreak": "DIRECT",
+            "China": "DIRECT",
+            "Streaming": "Proxy",
+            "Global": "Proxy"
+             }
+        port = int(metadata["dst_port"])
+
+        if port not in port_list:
+            return "DIRECT"
+
+        for rule_name in ctx.rule_providers.keys():
+            if ctx.rule_providers[rule_name].match(metadata):
+                return ruleset_action[rule_name]
+
+        ip = ctx.resolve_ip(metadata["host"])
+
+        if ip == "":
+          return "DIRECT"
+
+        code = ctx.geoip(ip)
+
+        if code == "LAN" or code == "CN":
+          return "DIRECT"
+
+        return "Proxy"
+rule-providers:
+  Steam:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/kkkbook/ol233334@master/Steam.yaml
+    path: ./ol233334/Steam.yaml
+    interval: 86400
+  OneDrive:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/Extra/Microsoft/OneDrive.yaml
+    path: ./ol233334/OneDrive.yaml
+    interval: 86400
+  Bilibili:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/kkkbook/ol233334@master/Bilibili.yaml
+    path: ./ol233334/Bilibili.yaml
+    interval: 86400
+  telegramsg:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/kkkbook/ol233334@master/telegramsg.yaml
+    path: ./ol233334/telegramsg.yaml
+    interval: 86400
+  daili:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/kkkbook/ol233334@master/daili.yaml
+    path: ./ol233334/daili.yaml
+    interval: 86400
+  lianjie:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/kkkbook/ol233334@master/lianjie.yaml
+    path: ./ol233334/lianjie.yaml
+    interval: 86400
+  Unbreak:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/Unbreak.yaml
+    path: ./ol233334/Unbreak.yaml
+    interval: 86400
+  China:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/China.yaml
+    path: ./ol233334/China.yaml
+    interval: 86400
+  Streaming:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/StreamingMedia/Streaming.yaml
+    path: ./ol233334/Streaming.yaml
+    interval: 86400
+  Global:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/Global.yaml
+    path: ./ol233334/Global.yaml
+    interval: 86400
+  ChinaIP:
+    type: http
+    behavior: ipcidr
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/Extra/ChinaIP.yaml
+    path: ./ol233334/ChinaIP.yaml
+    interval: 86400
+cfw-bypass:
+  - qq.com
+  - music.163.com
+  - "*.music.126.net"
+  - localhost
+  - 127.*
+  - 10.*
+  - 172.16.*
+  - 172.17.*
+  - 172.18.*
+  - 172.19.*
+  - 172.20.*
+  - 172.21.*
+  - 172.22.*
+  - 172.23.*
+  - 172.24.*
+  - 172.25.*
+  - 172.26.*
+  - 172.27.*
+  - 172.28.*
+  - 172.29.*
+  - 172.30.*
+  - 172.31.*
+  - 192.168.*
+  - <local>
+cfw-latency-timeout: 5000
+
