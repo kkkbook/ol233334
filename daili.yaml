@@ -12,3 +12,13 @@ payload:
   - IP-CIDR6,2001:b28:f23d::/48,no-resolve
   - IP-CIDR6,2001:b28:f23f::/48,no-resolve
   - IP-CIDR6,2001:67c:4e8::/48,no-resolve
+  - DOMAIN-KEYWORD,feixiaohao
+  - DOMAIN-SUFFIX,tradingview.com
+  - DOMAIN-SUFFIX,bnappzh.com
+  - DOMAIN-KEYWORD,binance
+  - DOMAIN,en.miui.com
+  - DOMAIN-KEYWORD,huobi
+  - DOMAIN-SUFFIX,feixiaohao.com
+  - DOMAIN,duckduckgo.com
+  - DOMAIN,115.amqigi.workers.dev
+  - DOMAIN,114514.wtf,Proxy
