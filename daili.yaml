@@ -21,4 +21,4 @@ payload:
   - DOMAIN-SUFFIX,feixiaohao.com
   - DOMAIN,duckduckgo.com
   - DOMAIN,115.amqigi.workers.dev
-  - DOMAIN,114514.wtf,Proxy
+  - DOMAIN,114514.wtf
