@@ -23,4 +23,3 @@ payload:
   - IP-CIDR,127.0.0.0/8,no-resolve
   - IP-CIDR,100.64.0.0/10,no-resolve
   - IP-CIDR,224.0.0.0/4,no-resolve
-  - DOMAIN-SUFFIX,cn
