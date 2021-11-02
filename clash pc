@@ -1,0 +1,159 @@
+dns:
+  enable: true
+  enhanced-mode: redir-host
+  listen: 127.0.0.1:53
+  default-nameserver:
+    - 106.14.204.26
+    - 114.114.114.114
+  use-hosts: true
+  nameserver:
+    - tls://13800000000.rubyfish.cn:853
+    - tls://8.8.8.8:853
+    - https://i.233py.com/dns-query
+proxies:
+
+rules:
+  - RULE-SET,zhilian,DIRECT
+  - RULE-SET,daili,Proxy
+  - RULE-SET,Steam,Proxy
+  - DOMAIN-SUFFIX,t.me,❀
+  - DOMAIN-SUFFIX,tdesktop.com,❀
+  - DOMAIN-SUFFIX,telegra.ph,❀
+  - DOMAIN-SUFFIX,telegram.me,❀
+  - DOMAIN-SUFFIX,telegram.org,❀
+  - DOMAIN-SUFFIX,telesco.pe,❀
+  - IP-CIDR,91.108.4.0/22,❀,no-resolve
+  - IP-CIDR,91.108.8.0/22,❀,no-resolve
+  - IP-CIDR,91.108.12.0/22,❀,no-resolve
+  - IP-CIDR,91.108.16.0/22,❀,no-resolve
+  - IP-CIDR,91.108.56.0/22,❀,no-resolve
+  - IP-CIDR,149.154.160.0/20,❀,no-resolve
+  - RULE-SET,OneDrive,Proxy
+  - RULE-SET,Netflix,Proxy
+  - RULE-SET,telegramsg,Proxy
+  - RULE-SET,Proxy,Proxy
+  - RULE-SET,Unbreak,DIRECT
+  - RULE-SET,China,DIRECT
+  - IP-CIDR,2001:b28:f23d::/48,Proxy,no-resolve
+  - IP-CIDR,2001:b28:f23f::/48,Proxy,no-resolve
+  - IP-CIDR,2001:67c:4e8::/48,Proxy,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
+  - GEOIP,CN,DIRECT
+  - MATCH,Proxy
+rule-providers:
+  zhilian:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/kkkbook/ol233334@master/zhilian.yaml
+    path: ./ol233334/zhilian.yaml
+    interval: 86400
+  Steam:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/kkkbook/ol233334@master/Steam.yaml
+    path: ./ol233334/Steam.yaml
+    interval: 86400
+  OneDrive:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/Extra/Microsoft/OneDrive.yaml
+    path: ./ol233334/OneDrive.yaml
+    interval: 86400
+  Bilibili:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/kkkbook/ol233334@master/Bilibili.yaml
+    path: ./ol233334/Bilibili.yaml
+    interval: 86400
+  Netflix:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/kkkbook/ol233334@master/Netflix.yaml
+    path: ./ol233334/Netflix.yaml
+    interval: 86400
+  telegramsg:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/kkkbook/ol233334@master/telegramsg.yaml
+    path: ./ol233334/telegramsg.yaml
+    interval: 86400
+  daili:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/kkkbook/ol233334@master/daili.yaml
+    path: ./ol233334/daili.yaml
+    interval: 86400
+  Proxy:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/kkkbook/ol233334@master/Proxy.yaml
+    path: ./ol233334/Proxy.yaml
+    interval: 86400
+  lanjie:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/kkkbook/ol233334@master/lanjie.yaml
+    path: ./ol233334/lanjie.yaml
+    interval: 86400
+  Unbreak:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/Unbreak.yaml
+    path: ./ol233334/Unbreak.yaml
+    interval: 86400
+  China:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/China.yaml
+    path: ./ol233334/China.yaml
+    interval: 86400
+  Streaming:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/StreamingMedia/Streaming.yaml
+    path: ./ol233334/Streaming.yaml
+    interval: 86400
+  Global:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/Global.yaml
+    path: ./ol233334/Global.yaml
+    interval: 86400
+  ChinaIP:
+    type: http
+    behavior: ipcidr
+    url: https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Clash/RuleSet/Extra/ChinaIP.yaml
+    path: ./ol233334/ChinaIP.yaml
+    interval: 86400
+cfw-bypass:
+  - qq.com
+  - music.163.com
+  - "*.music.126.net"
+  - localhost
+  - 127.*
+  - 10.*
+  - 172.16.*
+  - 172.17.*
+  - 172.18.*
+  - 172.19.*
+  - 172.20.*
+  - 172.21.*
+  - 172.22.*
+  - 172.23.*
+  - 172.24.*
+  - 172.25.*
+  - 172.26.*
+  - 172.27.*
+  - 172.28.*
+  - 172.29.*
+  - 172.30.*
+  - 172.31.*
+  - 192.168.*
+  - <local>
+cfw-latency-timeout: 5000
+
