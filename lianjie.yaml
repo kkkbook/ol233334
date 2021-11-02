@@ -3,3 +3,11 @@ payload:
   - DOMAIN,tbm-auth.alicdn.com
   - DOMAIN,h5data.talkingdata.net
   - DOMAIN,eagle-1253434826.file.myqcloud.com
+  #
+  - DOMAIN,wjx.cowtransfer.com,DIRECT
+  - DOMAIN-SUFFIX,rubyfish.cn,DIRECT
+  - DOMAIN,www.jianshu.com,DIRECT
+  - DOMAIN,api.allpayx.com,DIRECT
+  - DOMAIN-SUFFIX,baidupan.com,DIRECT
+  - DOMAIN,blog.csdn.net,DIRECT
+
