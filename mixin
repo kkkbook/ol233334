@@ -1,0 +1,43 @@
+mixin: # object
+  dns:
+    enable: true
+    ipv6: false
+    efault-nameserver:
+      - 114.114.114.114
+      - 106.14.204.26
+      - "[2400:3200::1]:53"
+    enhanced-mode: fake-ip
+    #listen: 127.0.0.1:53
+    fake-ip-range: 198.18.0.1/16
+    use-hosts: true
+    nameserver:
+      - tls://dh-dns.global-idc.net:853
+      - tls://13800000000.rubyfish.cn:853
+      - https://i.233py.com/dns-query
+      - https://v6.rubyfish.cn/dns-query
+    fallback:
+      - tls://1.1.1.1:853
+      - tls://8.8.8.8:853
+      - "tls://[2606:4700:4700::1111]:853"
+    fallback-filter:
+      geoip: true
+      ipcidr:
+        - 240.0.0.0/4
+        - 0.0.0.0/32
+      domain:
+        - +.google.com
+        - +.youtube.com
+        - +.twitter.com
+        - +.google.cn
+        - +.facebook.com
+        - +.googleapis.cn
+        - +.gvt1.com
+  ignore-resolve-fail: true
+  #interface-name: WLAN
+  tun:
+    enable: true
+    stack: gvisor
+    dns-hijack:
+      - 198.18.0.2:53
+    macOS-auto-route: true
+    macOS-auto-detect-interface: true
