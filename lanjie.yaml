@@ -3,4 +3,4 @@ payload:
   - DOMAIN,tbm-auth.alicdn.com
   - DOMAIN,h5data.talkingdata.net
   - DOMAIN,eagle-1253434826.file.myqcloud.com
-
+  - DOMAIN-SUFFIX,edgedatg.com 
