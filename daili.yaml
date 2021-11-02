@@ -22,3 +22,8 @@ payload:
   - DOMAIN,duckduckgo.com
   - DOMAIN,115.amqigi.workers.dev
   - DOMAIN,114514.wtf
+  - DOMAIN-SUFFIX,bybt.com
+  - DOMAIN-SUFFIX,fxhapp.com
+  - DOMAIN,cn.tradingview.com
+  - DOMAIN-SUFFIX,ftx.digital
+  - DOMAIN-SUFFIX,ftx.com
