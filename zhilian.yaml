@@ -1,4 +1,7 @@
 payload:
+  - DOMAIN,ad.caiyunapp.com
+  - DOMAIN,cdn-s.caiyunapp.com
+  - DOMAIN,mad.caiyunapp.com
   - DOMAIN,mcamanhua.com
   - DOMAIN,wjx.cowtransfer.com
   - DOMAIN-SUFFIX,rubyfish.cn
